@@ -19,8 +19,8 @@ const userSchema = new Schema(
           const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
           return emailRegex.test(value);
         },
+      },
     },
-  },
     thoughts: [
       {
         type: Schema.Types.ObjectId,
@@ -49,7 +49,7 @@ userSchema
   .get(function () {
     return this.friends.length;
   })
- 
+
 
 // Initialize our User model
 const User = model('user', userSchema);
