@@ -16,6 +16,7 @@ connection.once('open', async () => {
     await connection.dropCollection('users');
   }
 
+  //initial user data
   const users = [
     {
       username: 'aaranabdul',
@@ -73,6 +74,8 @@ connection.once('open', async () => {
     },
     
   ];
+
+  //initial thought data
   const thoughts = [
     {
       thoughtText: "video essay on the history of video games",
@@ -104,7 +107,7 @@ connection.once('open', async () => {
   await User.collection.insertMany(users);
   await Thought.collection.insertMany(thoughts);
 
-  // loop through the saved videos, for each video we need to generate a video response and insert the video responses
+ 
   console.table(users);
   console.table(thoughts);
   console.info('Seeding complete! 🌱');
